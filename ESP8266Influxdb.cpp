@@ -36,8 +36,8 @@ DB_RESPONSE Influxdb::write(String data) {
                 return _response;
         }
         String postHead = "POST /write?" + _db + " HTTP/1.1\r\n";
-        // postHead += "Host: " + localIP().toString() + ":" +
-        // localPort() + "\r\n";
+        postHead += "Host: " + localIP().toString() + ":" +
+        localPort() + "\r\n";
         // postHead += "Content-Type: application/x-www-form-urlencoded\r\n";
         postHead += "Content-Length: " + String(data.length()) + "\r\n\r\n";
 
